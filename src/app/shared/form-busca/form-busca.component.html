@@ -11,7 +11,7 @@
              Somente Ida
             </mat-button-toggle>
         </mat-button-toggle-group>
-        <mat-chip-listbox aria-label="Seleção de passagem">
+        <mat-chip-listbox (click)="openDialog()" aria-label="Seleção de passagem">
             <mat-chip-option selected>1 adulto</mat-chip-option>
             <mat-chip-option>Econômica</mat-chip-option>
         </mat-chip-listbox>
@@ -29,9 +29,38 @@
         <mat-form-field class="input-container"  appearance="outline">
             <mat-label>Destino</mat-label>
             <mat-icon matPrefix>flight_land</mat-icon>
-            <input matInput placeholder="Origem">
+            <input matInput placeholder="Destino">
             <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>   
+        <mat-form-field class="input-container" appearance="outline">
+          <mat-label>Data de ida</mat-label>
+          <input matInput [matDatepicker]="datepicker" placeholder="Selecione">
+          <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+          <mat-datepicker #datepicker>
+            <mat-datepicker-actions>
+              <button mat-button matDatepickerCancel>Cancel</button>
+              <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+            </mat-datepicker-actions>
+          </mat-datepicker>
         </mat-form-field>
-    </div>
+        
+        <mat-form-field class="input-container" appearance="outline">
+          <mat-label>Data de volta</mat-label>
+          <input matInput [matDatepicker]="datepicker" placeholder="Selecione">
+          <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+          <mat-datepicker #datepicker>
+            <mat-datepicker-actions>
+              <button mat-button matDatepickerCancel>Cancel</button>
+              <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+            </mat-datepicker-actions>
+          </mat-datepicker>
+        </mat-form-field>     
+
+        <section>
+          <div class="button-back-off">
+            <button mat-raised-button color="primary">Buscar</button>
+          </div>
+        </section>
+    </div>     
   </form>
 </app-card>
