@@ -6,21 +6,40 @@
          <li>Adultos</li>        
          <li>(Acima de 12 anos)</li>
          <li>
-            <button class="incremento" mat-mini-fab>
-                <img src="assets/icones/do_not_disturb_on.png" alt="Operador de subtração">
-            </button>
+            <app-botao-controle operacao = "decrementar"></app-botao-controle>
             <span>1</span>
-            <button class="decremento" mat-mini-fab>
-                <img src="assets/icones/add_circle.png" alt="Operador de adição">
-            </button>
-         </li>
+            <app-botao-controle operacao = "incrementar"></app-botao-controle>
+        </li>
         </ul>
+        <ul> 
+            <li>Crianças</li>        
+            <li>(Entre 2 e 11 anos)</li>
+            <li>
+               <app-botao-controle operacao = "decrementar"></app-botao-controle>
+               <span>1</span>
+               <app-botao-controle operacao = "incrementar"></app-botao-controle>
+           </li>
+        </ul>
+        <ul> 
+            <li>Bebês</li>        
+            <li>(Até 2 anos)</li>
+            <li>
+               <app-botao-controle operacao = "decrementar"></app-botao-controle>
+               <span>1</span>
+               <app-botao-controle operacao = "incrementar"></app-botao-controle>
+           </li>
+           </ul>
     </div>
+    <div class="categoria"><h3>Categoria</h3>
+        <mat-chip-listbox (click)="openDialog()" aria-label="Seleção de passagem">
+            <mat-chip-option selected>Econômica</mat-chip-option>
+            <mat-chip-option>Executiva</mat-chip-option>
+        </mat-chip-listbox>
+    </div> 
     </mat-dialog-content>
     <mat-dialog-actions>
-      <button mat-button mat-dialog-close>Cancel</button>
-      <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
-      <button mat-button [mat-dialog-close]="true">Delete</button>
+      <button mat-button mat-dialog-close color ="primary">Cancelar</button>
+      <button mat-button [mat-dialog-close]="true">aplicar</button>
     </mat-dialog-actions>
 </section>
 
