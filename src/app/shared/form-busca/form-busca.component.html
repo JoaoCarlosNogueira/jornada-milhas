@@ -32,30 +32,30 @@
             <input matInput placeholder="Destino">
             <mat-icon matSuffix>search</mat-icon>
         </mat-form-field>   
-        <mat-form-field class="input-container" appearance="outline">
-          <mat-label>Data de ida</mat-label>
-          <input matInput [matDatepicker]="datepicker" placeholder="Selecione">
-          <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
-          <mat-datepicker #datepicker>
+        
+        <mat-form-field class="input-container" appearance="outline">  
+          <mat-label>Data de volta</mat-label>
+          <input matInput [matDatepicker]="picker1" placeholder="Selecione">
+          <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1>
             <mat-datepicker-actions>
               <button mat-button matDatepickerCancel>Cancel</button>
               <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
             </mat-datepicker-actions>
-          </mat-datepicker>
+        </mat-datepicker>
         </mat-form-field>
         
-        <mat-form-field class="input-container" appearance="outline">
+        <mat-form-field class="input-container" appearance="outline">  
           <mat-label>Data de volta</mat-label>
-          <input matInput [matDatepicker]="datepicker" placeholder="Selecione">
-          <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
-          <mat-datepicker #datepicker>
+          <input matInput [matDatepicker]="picker2" placeholder="Selecione">
+          <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2>
             <mat-datepicker-actions>
               <button mat-button matDatepickerCancel>Cancel</button>
               <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
             </mat-datepicker-actions>
-          </mat-datepicker>
-        </mat-form-field>     
-
+        </mat-datepicker>
+        </mat-form-field>
         <section>
           <div class="button-back-off">
             <button mat-raised-button color="primary">Buscar</button>
