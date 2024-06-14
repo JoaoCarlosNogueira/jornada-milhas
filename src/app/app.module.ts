@@ -28,6 +28,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { BotaoControleComponent } from './shared/botao-controle/botao-controle.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PromocoesComponent } from './shared/promocoes/promocoes.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,7 +60,8 @@ import { PromocoesComponent } from './shared/promocoes/promocoes.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatDialogModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

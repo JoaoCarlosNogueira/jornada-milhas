@@ -1,13 +1,13 @@
 <app-card variant="secondary" class="form-busca">
-  <form>
+  <form [formGroup]="formBuscaService.formBusca">
     <h2>Passagens</h2>
     <div class="flex-container">
-        <mat-button-toggle-group aria-label="Tipo de passagem">
+        <mat-button-toggle-group aria-label="Tipo de passagem" formControlName="somenteIda">
             <mat-button-toggle>
-             <mat-icon>check</mat-icon>
+             <mat-icon *ngIf="formBuscaService.formBusca.get('somenteIda')?.value">check</mat-icon>
              Ida e Volta
             </mat-button-toggle>
-            <mat-button-toggle>
+            <mat-button-toggle  *ngIf="!formBuscaService.formBusca.get('somenteIda')?.value">
              Somente Ida
             </mat-button-toggle>
         </mat-button-toggle-group>
