@@ -31,7 +31,7 @@ export class DropdownUfComponent implements OnInit {
     this.filteredOptions$ = this.control.valueChanges.pipe(
       startWith(''),
       map(value=> this.filtrarUfs(value))
-    )
+    ) 
   } 
 
   filtrarUfs(value: string): UnidadeFederativa[]{

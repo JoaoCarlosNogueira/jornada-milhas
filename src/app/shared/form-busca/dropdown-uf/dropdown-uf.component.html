@@ -12,6 +12,8 @@
         [matAutocomplete]="auto">
     <mat-icon matSuffix>search</mat-icon>
     <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">    
-          <mat-option *ngfor="let option of filteredOptions" | async [value]="option">{{option}}</mat-option>
+          <mat-option *ngFor="let estado of filteredOptions$ | async" [value]="estado.nome">
+            {{estado.nome}}
+          </mat-option>
       </mat-autocomplete>
 </mat-form-field>
