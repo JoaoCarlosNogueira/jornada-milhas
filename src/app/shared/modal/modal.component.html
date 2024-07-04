@@ -32,14 +32,27 @@
     </div>
     <div class="categoria"><h3>Categoria</h3>
         <mat-chip-listbox (click)="openDialog()" aria-label="Seleção de passagem">
-            <mat-chip-option selected>Econômica</mat-chip-option>
-            <mat-chip-option>Executiva</mat-chip-option>
+            <mat-chip-option
+             value="Econômica"
+             [selected]="formBuscaService.formBusca.get('tipo')?.value === 'Econômica'"
+             (selectionChange)="formBuscaService.alterarTipo($event, 'Econômica')"
+             > 
+             Econômica
+            </mat-chip-option>
+            <mat-chip-option
+            value="Executiva"
+            [selected]="formBuscaService.formBusca.get('tipo')?.value === 'Executiva'"
+            (selectionChange)="formBuscaService.alterarTipo($event, 'Executiva')"
+            >
+                Executiva
+            </mat-chip-option>
         </mat-chip-listbox>
     </div> 
     </mat-dialog-content>
-    <mat-dialog-actions>
-      <button mat-button mat-dialog-close color ="primary">Cancelar</button>
-      <button mat-button [mat-dialog-close]="true">aplicar</button>
-    </mat-dialog-actions>
+    
+    <div mat-dialog-actions class="modal-actions">
+        <button color="primary" mat-flat-button mat-dialog-close>Buscar</button>
+    </div>
+
 </section>
 
