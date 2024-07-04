@@ -14,7 +14,10 @@ export class FormBuscaService {
       somenteIda: new FormControl(false),
       origem: new FormControl(null),
       destino: new FormControl(null),
-      tipo : new FormControl("Executiva")
+      tipo : new FormControl("Executiva"),
+      adultos: new FormControl(1),
+      criancas: new FormControl(0),
+      bebes: new FormControl(0)
     })
   } 
 
@@ -25,6 +28,18 @@ export class FormBuscaService {
     }
     
     return control as FormControl;
+  } 
+
+  getDescricaoPassageiros() : string{
+    let descricao = ''
+    
+    const adultos = this.formBusca.get('adultos')?.value
+
+    if(adultos > 0 ){
+      descricao += ''
+    } 
+
+    return descricao
   }
 
   openDialog() {
