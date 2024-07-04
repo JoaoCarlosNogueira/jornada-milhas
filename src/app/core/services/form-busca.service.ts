@@ -17,7 +17,11 @@ export class FormBuscaService {
       tipo : new FormControl("Executiva"),
       adultos: new FormControl(1),
       criancas: new FormControl(0),
-      bebes: new FormControl(0)
+      bebes: new FormControl(0),
+      quantidadeAdulto: new FormControl(0),
+      quantidadeCrianca: new FormControl(0),
+      quantidadeBebe: new FormControl(0),
+
     })
   } 
 
@@ -29,14 +33,14 @@ export class FormBuscaService {
     
     return control as FormControl;
   } 
-
+  
   getDescricaoPassageiros() : string{
     let descricao = ''
     
     const adultos = this.formBusca.get('adultos')?.value
 
     if(adultos > 0 ){
-      descricao += ''
+      descricao += '' 
     } 
 
     return descricao
@@ -54,6 +58,14 @@ export class FormBuscaService {
       })
     } 
     console.log("evento alterado para " + tipo)
-  }
+  } 
 
+  calculaQuantidade(evento: Event): void{ 
+    
+    let quantidade = this.formBusca.get('quantidadeAdulto')?.value + 1
+    this.formBusca.get('quantidadeAdulto')?.setValue(quantidade)
+    
+    console.log(this.formBusca.get('quantidadeAdulto') + "oiiii")
+  }
+  
 }
