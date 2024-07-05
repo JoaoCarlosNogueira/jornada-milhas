@@ -1,11 +1,12 @@
 import { Component, Input } from '@angular/core';
+import { ControlValueAccessor } from '@angular/forms';
 
 @Component({
   selector: 'app-seletor-passageiro',
   templateUrl: './seletor-passageiro.component.html',
   styleUrls: ['./seletor-passageiro.component.scss']
 })
-export class SeletorPassageiroComponent {
+export class SeletorPassageiroComponent  implements ControlValueAccessor{
   @Input() titulo: string = ''
   @Input() subtitulo: string = ''
 
