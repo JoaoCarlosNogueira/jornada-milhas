@@ -36,6 +36,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { FormBaseComponent } from './shared/form-base/form-base.component';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDividerModule} from '@angular/material/divider';
+import { CadastroComponent } from './pages/cadastro/cadastro.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +55,8 @@ import {MatDividerModule} from '@angular/material/divider';
     DropdownUfComponent,
     SeletorPassageiroComponent,
     LoginComponent,
-    FormBaseComponent
+    FormBaseComponent,
+    CadastroComponent
   ],
   imports: [
     BrowserModule,
