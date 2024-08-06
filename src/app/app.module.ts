@@ -30,13 +30,12 @@ import { BotaoControleComponent } from './shared/botao-controle/botao-controle.c
 import { HttpClientModule } from '@angular/common/http';
 import { PromocoesComponent } from './shared/promocoes/promocoes.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { DropdownUfComponent } from './shared/form-busca/dropdown-uf/dropdown-uf.component';
+import { DropdownUfComponent } from './shared/dropdown-uf/dropdown-uf.component';
 import { SeletorPassageiroComponent } from './shared/seletor-passageiro/seletor-passageiro.component';
 import { LoginComponent } from './pages/login/login.component';
 import { FormBaseComponent } from './shared/form-base/form-base.component';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDividerModule} from '@angular/material/divider';
-import { CadastroComponent } from './pages/cadastro/cadastro.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,8 +54,7 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component';
     DropdownUfComponent,
     SeletorPassageiroComponent,
     LoginComponent,
-    FormBaseComponent,
-    CadastroComponent
+    FormBaseComponent
   ],
   imports: [
     BrowserModule,
