@@ -62,7 +62,7 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule, 
     MatToolbarModule,
     MatButtonModule,
     MatCardModule,
