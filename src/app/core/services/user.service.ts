@@ -22,4 +22,9 @@ export class UserService {
     const user = jwtDecode(token) as PessoaUsuario;
     this.userSubject.next(user)
    }
+
+   retornaUser(){
+    return this.userSubject.asObservable();
+   }
+   
 }
