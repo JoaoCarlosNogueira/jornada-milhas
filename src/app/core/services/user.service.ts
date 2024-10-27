@@ -31,4 +31,14 @@ export class UserService {
     this.tokenService.salvarToken(token);
     this.decodificarJWT();
    }
+
+   logout(){
+    this.tokenService.exlcluirToken();
+    this.userSubject.next(null);
+   }
+
+   estaLogado(){
+    return this.tokenService.possuiToken();
+   }
+
 }
