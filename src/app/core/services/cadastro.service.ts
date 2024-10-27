@@ -16,7 +16,7 @@ export class CadastroService {
    }
 
    cadastrar(pessoa: PessoaUsuario): Observable<PessoaUsuario>{
-    return this.httpClient.post<PessoaUsuario>(`${this.apiUrl}/auth/login`,{pessoa})
+    return this.httpClient.post<PessoaUsuario>(`${this.apiUrl}/auth/cadastro`,pessoa)
    }
 
 }
