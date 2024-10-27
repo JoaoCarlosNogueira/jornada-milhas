@@ -33,7 +33,7 @@ export class FormBaseComponent implements OnInit {
       telefone: [null,Validators.required],
       estado: this.estadoControl,
       confirmarEmail: [null,[Validators.required,Validators.email,FormValidations.equalTo('email')]],
-      confirmarSenha: [null,[Validators.required,Validators.minLength(3),FormValidations.equalTo('email')]],
+      confirmarSenha: [null,[Validators.required,Validators.minLength(3),FormValidations.equalTo('senha')]],
       aceitarTermos:  [null,[Validators.requiredTrue]]
     })
     this.formularioService.setCadastro(this.cadastroForm)
