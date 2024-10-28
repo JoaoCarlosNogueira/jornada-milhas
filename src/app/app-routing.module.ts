@@ -4,6 +4,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { FormBaseComponent } from './shared/form-base/form-base.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
+import { PerfilComponent } from './pages/perfil/perfil.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   },{
     path: 'cadastro',
     component: CadastroComponent
+  },
+  {
+    path: 'perfil',
+    component: PerfilComponent
   }
 ];
 
