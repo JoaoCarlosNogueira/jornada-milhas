@@ -2,7 +2,7 @@
     <mat-card>
       <form [formGroup]="cadastroForm">
         <mat-card-title>
-          Crie sua conta
+          {{titulo}}
         </mat-card-title>
         <section>
           <div class="acoesPerfil" *ngIf="perfilComponent">
@@ -113,7 +113,7 @@
           <button (click)="executarAcao()" mat-flat-button
             [disabled]="cadastroForm.invalid"
             color="primary"
-          >CADASTRAR
+          >{{textoBotao}}
           </button>
         </mat-card-actions>
       </form>
