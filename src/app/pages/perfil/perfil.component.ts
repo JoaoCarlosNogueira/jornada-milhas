@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { CadastroService } from 'src/app/core/services/cadastro.service';
 import { FormularioService } from 'src/app/core/services/formulario.service';
 import { TokenService } from 'src/app/core/services/token.service';
+import { UserService } from 'src/app/core/services/user.service';
 import { PessoaUsuario } from 'src/app/core/types/type';
 
 @Component({
@@ -24,7 +26,9 @@ export class PerfilComponent  implements OnInit{
 constructor(
   private tokenService: TokenService,
   private cadastroService: CadastroService,
-  private formularioService: FormularioService
+  private formularioService: FormularioService,
+  private router: Router,
+  private userService : UserService
 ){} 
 
 ngOnInit(): void {
@@ -51,11 +55,31 @@ carregarFormulario(){
   })
 }
 
- deslogar(){
-    console.log("Deslogado com Sucesso");
+atualizar(){
+  const dadosAtualizados = {
+    nome: this.form?.value.nome,
+  nascimento: this.form?.value.nascimento,
+  cpf: this.form?.value.cpf, 
+  telefone: this.form?.value.telefone,
+  email: this.form?.value.email,
+  senha:  this.form?.value.senha,
+  cidade: this.form?.value.cidade,
+  estado: this.form?.value.estado,
+  genero: this.form?.value.genero
+  }  
+  this.cadastroService.editarcadastro(dadosAtualizados,this.token).subscribe({
+    next: () => {
+      alert('Cadastro editado com sucesso')
+      this.router.navigate(['/'])
+    },
+    error: (err) =>{
+      console.log('Erro ao atualizar cadastro',err)
+    }
+  })
  }
 
- atualizar(){
-  console.log("Perfil atualizado com Sucesso");  
+ deslogar(){
+    this.userService.logout();
+    this.router.navigate(['/login'])
  }
 }
