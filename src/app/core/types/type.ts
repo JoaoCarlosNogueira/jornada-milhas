@@ -14,10 +14,11 @@ export interface UnidadeFederativa{
 export interface PessoaUsuario{
  nome: string;
  nascimento: string;
- cpf: string
- telefone: string
- email: string
- senha: string
- cidade: string
- estado: UnidadeFederativa
+ cpf: string;
+ telefone: string;
+ email: string;
+ senha: string;
+ cidade: string;
+ estado: UnidadeFederativa,
+ genero: string;
 }

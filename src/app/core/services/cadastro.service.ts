@@ -10,23 +10,20 @@ import { Observable } from 'rxjs';
 export class CadastroService {
 
   private apiUrl = environment.apiUrl
-
-  constructor(private httpClient: HttpClient) {
-
-   }
+  constructor(private httpClient: HttpClient) { }
 
    cadastrar(pessoa: PessoaUsuario): Observable<PessoaUsuario>{
     return this.httpClient.post<PessoaUsuario>(`${this.apiUrl}/auth/cadastro`,pessoa)
    } 
 
-   Buscarcadastro(token: string): Observable<PessoaUsuario>{
+   buscarcadastro(token: string): Observable<PessoaUsuario>{
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     })
     return this.httpClient.get<PessoaUsuario>(`${this.apiUrl}/auth/perfil`,{headers})
    }
    
-   Editarcadastro( pessoaUsuario: PessoaUsuario, token: string): Observable<PessoaUsuario>{
+   editarcadastro( pessoaUsuario: PessoaUsuario, token: string): Observable<PessoaUsuario>{
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     })
