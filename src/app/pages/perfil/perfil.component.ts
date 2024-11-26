@@ -33,7 +33,7 @@ constructor(
 
 ngOnInit(): void {
   this.token = this.tokenService.retornarToken();
-  this.cadastroService.buscarcadastro(this.token).subscribe(cadastro=>{
+  this.cadastroService.buscarcadastro().subscribe(cadastro=>{
     this.cadastro = cadastro;
     this.nome = this.cadastro.nome;
     this.carregarFormulario();
@@ -67,7 +67,7 @@ atualizar(){
   estado: this.form?.value.estado,
   genero: this.form?.value.genero
   }  
-  this.cadastroService.editarcadastro(dadosAtualizados,this.token).subscribe({
+  this.cadastroService.editarcadastro(dadosAtualizados).subscribe({
     next: () => {
       alert('Cadastro editado com sucesso')
       this.router.navigate(['/'])
