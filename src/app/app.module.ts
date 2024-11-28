@@ -41,6 +41,7 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { AutenticacaoInterceptor } from './core/interceptors/autenticacao.interceptor';
 import { NgxMaskDirective,provideNgxMask } from 'ngx-mask';
+import { DepoimentosComponent } from './pages/depoimentos/depoimentos.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,6 +63,7 @@ import { NgxMaskDirective,provideNgxMask } from 'ngx-mask';
     FormBaseComponent,
     CadastroComponent,
     PerfilComponent,
+    DepoimentosComponent,
   ],
   imports: [
     BrowserModule,

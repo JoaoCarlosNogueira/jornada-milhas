@@ -1,14 +1,11 @@
-<mat-card class="card-depoimento">
+<mat-card class="depoimento">
     <mat-card-content>
-     <ul>
-        <img mat-card-image src="assets/imagens/avatar3.png" alt="imagem pessoa">
-        <li>Minha viagem com a Jornada foi incrível! Recomendo muito a 
-            agência para quem busca uma experiência emocionante e 
-            personalizada a partir das nossas necessidades.
-            <div class="nome-pessoa">
-             Mariana Faustino
-            </div>
-        </li> 
-    </ul>
+      <img src="assets/imagens/avatar3.png" alt="Avatar da pessoa autora do depoimento">
+      <ul>
+        <li>{{ depoimento.texto }}</li>
+        <li>
+          <strong>{{ depoimento.autor }}</strong>
+        </li>
+      </ul>
     </mat-card-content>
   </mat-card>

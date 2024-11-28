@@ -11,6 +11,13 @@ export interface UnidadeFederativa{
     sigla:string;
 }
 
+export interface Depoimento {
+    id: number;
+    texto: string;
+    autor: string;
+    avatar: string;
+}
+
 export interface PessoaUsuario{
  nome: string;
  nascimento: string;
