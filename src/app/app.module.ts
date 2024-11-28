@@ -40,6 +40,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { AutenticacaoInterceptor } from './core/interceptors/autenticacao.interceptor';
+import { NgxMaskDirective,provideNgxMask } from 'ngx-mask';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,7 +61,7 @@ import { AutenticacaoInterceptor } from './core/interceptors/autenticacao.interc
     LoginComponent,
     FormBaseComponent,
     CadastroComponent,
-    PerfilComponent
+    PerfilComponent,
   ],
   imports: [
     BrowserModule,
@@ -82,13 +83,15 @@ import { AutenticacaoInterceptor } from './core/interceptors/autenticacao.interc
     MatDividerModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    NgxMaskDirective,
+    ReactiveFormsModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: AutenticacaoInterceptor,
-    multi: true
-  }],
+    multi: true,
+  },provideNgxMask({ validation: false })],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
